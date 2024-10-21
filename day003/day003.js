@@ -59,3 +59,11 @@ for (x = 0; x < children.length; x++) {
 }
 
 // TASK: Count the total age of all the children
+
+let totalAge = 0;
+
+for (x = 0; x < children.length; x++) {
+  totalAge += children[x].age;
+}
+
+console.log('Celkový věk:', totalAge);
