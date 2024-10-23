@@ -54,5 +54,23 @@ let children = [
 // Tomáš Novák      14
 // Petra Svobodová  16
 
-const child = "Tonda Kmoch";
-console.log(child.length);
+let maxLength = 0;
+
+for (x = 0; x < children.length; x++) {
+  const l = children[x].name.length
+  if (maxLength < l) {
+    maxLength = l
+  }
+}
+console.log(maxLength);
+
+function justify(name, maxLength) {
+  for (let x = name.length; x <= maxLength; x++) {
+    name = name + ' '
+  }
+  return name
+}
+
+for (x = 0; x < children.length; x++) {
+  console.log(justify(children[x].name, maxLength) + children[x].age)
+}
