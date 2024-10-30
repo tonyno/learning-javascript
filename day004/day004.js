@@ -74,3 +74,64 @@ function justify(name, maxLength) {
 for (x = 0; x < children.length; x++) {
   console.log(justify(children[x].name, maxLength) + children[x].age)
 }
+
+function mySort(children) {
+  for (let z = 0; z < children.length; z++) {
+    for (let x = 0; x < children.length - 1; x++) {
+      if (children[x].age > children[x + 1].age) {
+        let y = children[x + 1].age
+        children[x + 1].age = children[x].age
+        children[x].age = y
+      }
+    }
+  }
+  return children
+}
+const sort = mySort(children)
+console.log(mySort(children))
+
+for (x = 0; x < children.length; x++) {
+  console.log(justify(children[x].name, maxLength) + children[x].age)
+}
+
+s = "Ahoj Tondo jak se mas"
+console.log(s.split(' ')[1])
+
+
+function fixName(children) {
+  for (let z = 0; z < children.length; z++) {
+    const nameParts = children[z].name.split(' ')
+    // nameParts[0] == 'Sandra', nameParts[1] == 'Maskova'
+    children[z].name = nameParts[1] + ' ' + nameParts[0]
+  }
+}
+
+fixName(children)
+
+function mySort2(children) {
+  for (let z = 0; z < children.length; z++) {
+    for (let x = 0; x < children.length - 1; x++) {
+      const s1 = children[x].name
+      const s2 = children[x + 1].name
+      const tt = s1.localeCompare(s2, "cs", { sensitivity: "base" })
+      if (tt == 1) {
+        let y = children[x + 1].name
+        children[x + 1].name = children[x].name
+        children[x].name = y
+      }
+    }
+  }
+  return children
+}
+
+const sort2 = mySort2(children)
+console.log(mySort2(children))
+
+for (x = 0; x < children.length; x++) {
+  console.log(justify(children[x].name, maxLength) + children[x].age)
+}
+
+const s1 = "a"
+const s2 = "b"
+const tt = s1.localeCompare(s2, "cs", { sensitivity: "base" })
+console.log(tt)
